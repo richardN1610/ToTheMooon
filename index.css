@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url('/images/bg5.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 10%;
+}
+.advert{
+    position: absolute;
+    top: 25%;
+    width: 30vw;
+    margin-left: 6vw;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+h1{
+    color: antiquewhite;
+}
+h3{
+    color: rgb(14, 233, 2);
+}
+.nav-bar ul li{
+    list-style-type: none;
+    font-size: 1.7rem;
+    width: 7vw;
+    height: 2vw;
+    text-align: center;
+    margin-left: 20px;
+    float: right;
+    color: azure;
+    border-radius: 20px;
+    font-weight: 650;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+.nav-bar ul li:hover{
+    border: 2px solid white;
+    cursor: pointer;
+}
+.nav-bar ul li:active{
+    background-color: rgb(180, 187, 187);
+}
+.home{
+    border: 2px solid white;
+}
+.sign-up-form{
+    position: absolute;
+    background-color: rgba(88, 86, 82, 0.445);
+    width: 25vw;
+    height: 25vw;
+    text-align: center;
+    right: 1%;
+    top: 25%;
+    box-shadow: -6px 8px 15px black;
+}
+
+.login-form{
+    position: absolute;
+    top: 30%;
+    width: 25vw;
+    height: 32vh;
+    background-color: rgba(88, 86, 82, 0.445);
+    box-shadow: -3px 5px 10px black;
+    text-align: center;
+    left: 30%;
+    display: none;
+}
+.sign-up-title,.login-title{
+    font-size: 3rem;
+    color: lightgoldenrodyellow;
+}
+input{
+    width: 80%;
+    font-size: 1.5rem;
+    margin-top: 35px;
+}
+.s-btn, .login-btn{
+    position: absolute;
+    font-size:1.3rem;
+    border: none;
+    bottom: 5%;
+    left: 10%;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    border: 2px solid white;
+    box-shadow: -3px 5px 5px black;
+    border-radius: 5px;
+    color: lightgoldenrodyellow;
+}
+.about-us{
+    width: 40vw;
+    height: 40vw;
+    display: none;
+}
