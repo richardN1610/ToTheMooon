@@ -4,5 +4,32 @@
     box-sizing: border-box;
 }
 body{
-    background-color: rgba(236, 240, 240, 0.876);
+    background-color: #29313a;
+    color: white;
+}
+table{
+    width: 60vw;
+    height: 40vw;
+    border: 2px solid wheat;
+    margin: auto;
+}
+th{
+    font-size:1.8rem;
+    border-bottom: 2px solid wheat;
+}
+
+td{
+    border-bottom: 1px solid wheat;
+    text-align: left;
+    font-size: 1.5rem;
+    padding-left: 3vw;
+    color: wheat;
+}
+.price-column{
+    color: rgb(26, 235, 95);
+}
+.coin-icon{
+    width: 3vw;
+    height: 3vw;
+    margin-right: 10px;
 }

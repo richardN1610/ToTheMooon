@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="trade.css">
+    <script src="coin_api.js" defer></script>
     <title>ToTheMoon</title>
 </head>
 
@@ -25,9 +26,75 @@
             </ul>
         </div>
     </nav>
-    <div class="graph">
-        
+    <div class="coin-table" id="coin-table-div">
+        <table>
+            <tr>
+                <th>Coin Ranking</th>
+                <th>Coin Name</th>
+                <th>Coin Id</th>
+                <th>Price - AUD</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td> <img src="/images/icons/btc.png" class="coin-icon">Bitcoin</td>
+                <td>BTC</td>
+                <td class="price-column" id="coin1"></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><img src="/images/icons/eth.png" class="coin-icon">Ethereum</td>
+                <td>ETH</td>
+                <td class="price-column" id="coin2"></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><img src="/images/icons/dash.png" class="coin-icon">Dash</td>
+                <td>DASH</td>
+                <td class="price-column" id="coin3"></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><img src="/images/icons/doge.png" class="coin-icon">Doge Coin</td>
+                <td>DOGE</td>
+                <td class="price-column" id="coin4"></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><img src="/images/icons/uni.png" class="coin-icon">Uniswap</td>
+                <td>UNI</td>
+                <td class="price-column" id="coin5"></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><img src="/images/icons/usdc.png" class="coin-icon">U.S Dollar Coin</td>
+                <td>USDC</td>
+                <td class="price-column" id="coin6"></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><img src="/images/icons/ltc.png" class="coin-icon">Litecoin</td>
+                <td>Lite</td>
+                <td class="price-column" id="coin7"></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><img src="/images/icons/btch.png" class="coin-icon">Bitcoin Cash</td>
+                <td>Btc Cash</td>
+                <td class="price-column" id="coin8"></td>
+            </tr>
+
+        </table>
     </div>
+
+    <footer class="footer">
+        Contact Us
+        <ul>
+            <li>Address</li>
+            <li>Phone</li>
+            <li>Email</li>
+            <li>FAQ</li>
+        </ul>
+    </footer>
 </body>
 
 </html>
