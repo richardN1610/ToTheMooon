@@ -95,3 +95,24 @@ footer ul li{
     margin-top: 10px;
     cursor: pointer;
 }
+
+.coin-chart{
+    width: 1280px;
+    height: 720px;
+    background-color: beige;
+}
+
+.stock-btn{
+    width: 10vw;
+    height: 8vh;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+    margin-left: 8%;
+}
+.buy{
+    background-color: rgb(26, 235, 95);
+}
+.sell{
+    background-color: rgb(248, 60, 60);
+}

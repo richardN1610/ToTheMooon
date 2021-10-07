@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="trade.css">
-    <script src="coin_api.js" defer></script>
-    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.1.0/dist/chartjs-adapter-luxon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0/dist/chartjs-plugin-streaming.min.js"></script>
+    <script src="trade.js" type="module" defer></script>
+    <title>ToTheMoon</title>
 </head>
+
 <body>
-    
+    <nav class="nav-bar">
+        <div class="left-nav">
+            <ul>
+                <li><img src="/images/logo.png" class="logo"></li>
+                <li>
+                    <form action="#" id="search-form">
+                        <input type="text" class="userinput" placeholder="Enter Cryptocurrency...">
+                        <button type="submit" id="search-btn">Search</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <div class="right-nav">
+            <ul>
+                <li>Log Out</li>
+                <li>History</li>
+                <li>Account</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="trading-section">
+        <section id="coin-chart" class="coin-chart">
+            <canvas id="coin-graph">
+
+            </canvas>
+        </section>
+        <div class="trade-area">
+            <input type="text" class="stock-amount" placeholder="$ - Amount">
+            <button class="stock-btn buy" id="buy-btn">Buy</button>
+            <button class="stock-btn sell" id="sell-btn">Sell</button>
+        </div>
+        <div class="purchase-history">
+
+        </div>
+    </div>
+
 </body>
+
 </html>
