@@ -59,17 +59,18 @@ h3{
     right: 1%;
     top: 25%;
     box-shadow: -6px 8px 15px black;
+    display: block;
 }
 
 .login-form{
     position: absolute;
     top: 30%;
     width: 25vw;
-    height: 32vh;
+    height: 18vw;
     background-color: rgba(88, 86, 82, 0.445);
     box-shadow: -3px 5px 10px black;
     text-align: center;
-    left: 30%;
+    right: 1%;
     display: none;
 }
 .sign-up-title,.login-title{
@@ -99,4 +100,8 @@ input{
     width: 40vw;
     height: 40vw;
     display: none;
+}
+form button:active{
+    transform: translateY(5px);
+    box-shadow: none;
 }

@@ -7,7 +7,6 @@ form.addEventListener('submit', (e)  =>{
     GetCoinPrice();
 })
 
-
 async function GetCoinPrice(){
     let searchCoinName = "https://api.coinbase.com/v2/prices/"+userInput.value+"-AUD/spot";
     const response = await fetch(searchCoinName)
@@ -21,7 +20,7 @@ async function GetCoinPrice(){
                             return coinPrice = parseFloat(data.data.amount).toFixed(2);
                          }).catch((error) =>{
                              alert("Bad Input")
-                             window.location.href = "trade.html";   //if user no currency found, return to trade page
+                            //  window.location.href = "trade.html";   //if user no currency found, return to trade page
                          })
     setTimeout(GetCoinPrice,30000);
 }

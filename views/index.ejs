@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="index.js" defer></script>
     <link rel="stylesheet" href="index.css">
     <title>Document</title>
 </head>
 <body>
     <nav class="nav-bar">
         <ul>
-            <li>Sign Up</li>
-            <li>Login</li>
+            <li id="sign-up">Sign Up</li>
+            <li id="login">Login</li>
             <li>About</li>
             <li class="home">Home</li>
         </ul>
@@ -33,41 +34,43 @@
         <h1>Cryptocurrency Trading Platform</h1>
         <h3>With 0% Commission</h3>
     </div>
+
     <div class="login-form">
         <div class="login-title">
             <span>Login</span>
         </div>
-        <form action="#">
+        <form action="#" id="l-form">
             <div class="login-id-div">
-                <input type="text" placeholder="Mobile Number" class="login-id" id="login-id" required>
+                <input type="text" placeholder="Email Address" class="login-id" id="login-id" required>
             </div>
             <div class="login-password-div">
                 <input type="password" placeholder="Password" class="login-password" id="login-password" required>
             </div>
             <div class="login-btn-div">
-                <button class="login-btn">Login</button>
+                <button class="login-btn" type="submit">Login &#8594</button>
             </div>
         </form>
     </div>
+
     <div class="sign-up-form">
         <div class="sign-up-title">
             <span>Sign Up</span>
         </div>
-        <form action="#">
+        <form action="#" id="signup-form">
             <div class="first-name">
-                <input type="text" class="f-name" id="f-name" placeholder="First Name" required>
+                <input type="text" class="f-name" id="f-name" placeholder="Full Name" autocomplete="off" required >
             </div>
-            <div class="last-name">
-                <input type="text" class="l-name" id="l-name" placeholder="Last Name" required>
+            <div class="signup-password">
+                <input type="password" class="s-password" id="s-password" placeholder="Password"  autocomplete="off" required>
             </div>
             <div class="mobile">
-                <input type="text" class="mobile-number" id="mobile-number" placeholder="Mobile Number" required>
+                <input type="text" class="mobile-number" id="mobile-number" placeholder="Mobile Number" autocomplete="off" required>
             </div>
             <div class="email">
-                <input type="email" name="email" id="email-address" placeholder="Email Address">
+                <input type="email" name="email" id="email-address" placeholder="Email Address" autocomplete="off" required>
             </div>
             <div class="sign-up-btn">
-                <button class="s-btn">Sign Up&#8594</button>
+                <button class="s-btn" type="submit">Sign Up&#8594</button>
             </div>
         </form>
     </div>

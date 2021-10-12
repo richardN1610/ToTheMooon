@@ -96,6 +96,13 @@ footer ul li{
     cursor: pointer;
 }
 
+.trading-section{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform:translate(-50%,-45%)
+}
+
 .coin-chart{
     width: 1280px;
     height: 720px;
@@ -103,12 +110,14 @@ footer ul li{
 }
 
 .stock-btn{
-    width: 10vw;
+    width: 8vw;
     height: 8vh;
     font-size: 2rem;
     cursor: pointer;
-    color: white;
-    margin-left: 8%;
+    color: rgb(248, 232, 203);
+    margin-left: 15%;
+    margin-top: 20px;
+    border-radius: 20px;
 }
 .buy{
     background-color: rgb(26, 235, 95);
