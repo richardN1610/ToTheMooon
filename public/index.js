@@ -20,7 +20,7 @@ signupForm.addEventListener('submit', async function(e){
 
     if(result.status === 'ok'){
         alert("Account created");
-        window.location.href ="/";
+        signupForm.reset();
     }else{
         alert(result.error);
     }
@@ -39,11 +39,12 @@ loginForm.addEventListener('submit', async function(e){
         body: JSON.stringify({
             loginEmail, loginPassword, reqType
         })
-    }).then((res) => res.json());
+    })
+    .then((res) => res.json());
     if(result.status === 'ok'){
-        alert("loggin");
+        location.assign('/home');
     }else{
-        alert("error")
+        alert("Invalid Credentials")
     }
 });
 

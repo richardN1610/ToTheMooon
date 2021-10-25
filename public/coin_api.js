@@ -28,3 +28,4 @@ function DisplayDataTable(result) {
         tableRows[i].innerHTML = "$ " + currentPrice[i];   //assining values to table rows.
     }
 }
+

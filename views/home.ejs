@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="trade.css">
     <script src="coin_api.js" defer></script>
-    <title>ToTheMoon</title>
+    <title>To The Moon</title>
 </head>
 
 <body>
@@ -15,18 +16,18 @@
         <div class="left-nav">
             <ul>
                 <li><img src="/images/logo.png" class="logo"></li>
-                <li><input type="text" placeholder="Enter Cryptocurrency..."></li>
             </ul>
         </div>
         <div class="right-nav">
             <ul>
                 <li>Log Out</li>
-                <li>History</li>
                 <li>Account</li>
+                <a href="/search"><li id="trade-page">Trade</li></a>
             </ul>
         </div>
     </nav>
     <div class="coin-table" id="coin-table-div">
+        <h1>Welcome <%= currentUser.fullname %></h1>
         <table>
             <tr>
                 <th>Coin Ranking</th>
@@ -92,25 +93,27 @@
                 Contact Us
             </span>
             <ul>
-                <li>Phone: 1800 888 888</li>
-                <li>Email: ToTheMoon@gmail.com</li>
-                <li>Address: 5188 Melbourne Lane, VIC, 3000</li>
+                <a href="tel:+61433522985"><li><i class="fas fa-phone-square-alt"></i> 1800 888 888</li></a>
+                <li><i class="fas fa-envelope-square"></i> ToTheMoon@gmail.com</li>
+                <a href="https://www.google.com/maps/place/CBD,+Melbourne+VIC+3000/@-37.8112451,144.9543962,15z/data=!4m13!1m7!3m6!1s0x6ad642caf37771c5:0x834e664d24dced61!2sCBD,+Melbourne+VIC+3000!3b1!8m2!3d-37.8123652!4d144.9623382!3m4!1s0x6ad642caf37771c5:0x834e664d24dced61!8m2!3d-37.8123652!4d144.9623382" target="_blank">
+                <li><i class="fas fa-map-marked"></i> 5188 Melbourne Lane, VIC, 3000</li></a>
             </ul>
         </div>
+        
         <div class="mid-footer">
             <span>Learn</span>
             <ul>
-                <li>What is cryptocurrency?</li>
-                <li>What is a blockchain?</li>
-                <li>What is Bitcoin?</li>
+                <a href="https://www.investopedia.com/terms/c/cryptocurrency.asp" target="_blank"><li>What is cryptocurrency?</li></a>
+                <a href="https://www.investopedia.com/terms/b/blockchain.asp" target="_blank"><li>What is a blockchain?</li></a>
+                <a href="https://www.investopedia.com/news/how-bitcoin-works/" target="_blank"><li>What is Bitcoin?</li></a>
             </ul>
         </div>
         <div class="right-footer">
             <span>Social</span>
             <ul>
-                <li>Facebook</li>
-                <li>Twitter</li>
-                <li>Instagram</li>
+                <a href="https://www.facebook.com/" target="_blank"><li><i class="fab fa-facebook-square"></i> Facebook</li></a>
+                <a href="https://twitter.com/home" target="_blank"><li><i class="fab fa-twitter-square"></i> Twitter</li></a>
+                <a href="https://www.instagram.com/" target="_blank"><li><i class="fab fa-instagram-square"></i> Instagram</li></a>
             </ul>
         </div>
     </footer>

@@ -98,15 +98,15 @@ footer ul li{
 
 .trading-section{
     position: absolute;
-    left: 50%;
+    left: 45%;
     top: 50%;
     transform:translate(-50%,-45%)
 }
 
 .coin-chart{
-    width: 1280px;
-    height: 720px;
-    background-color: beige;
+    width: 60vw;
+    height: 35vw;
+    background-color: #202327;
 }
 
 .stock-btn{
@@ -115,13 +115,51 @@ footer ul li{
     font-size: 2rem;
     cursor: pointer;
     color: rgb(248, 232, 203);
-    margin-left: 15%;
+    margin-left: 35%;
     margin-top: 20px;
     border-radius: 20px;
 }
 .buy{
     background-color: rgb(26, 235, 95);
 }
-.sell{
-    background-color: rgb(248, 60, 60);
+a{
+    color: wheat;
+    text-decoration: none;
+}
+
+h3{
+    color: rgb(26, 235, 95);
+}
+.transaction-side{
+    width: 22vw;
+    position: absolute;
+    right: 0%;
+    top: 10%;
+    text-align: left;
+    height: auto;
+}
+.display-balance{
+    margin-top: 1%;
+    margin-left: 2%;
+}
+.row-description{
+    display: grid;
+    grid-template-columns: 4vw 6vw 6vw 6vw;
+}
+.transaction-row{
+    display: grid;
+    grid-template-columns: 4vw 6vw 6vw 6vw;
+    margin-top: 0.8vw;
+    background-color: #202327;
+}
+.sell-btn{
+    background-color: rgb(231, 2, 2);
+    color: wheat;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+.coin-table h1{
+    margin-left: 2%;
+    margin-top: 0.3%;
 }
