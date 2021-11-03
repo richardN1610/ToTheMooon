@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="trade.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.1.0/dist/chartjs-adapter-luxon.min.js"></script>
@@ -38,26 +39,25 @@
             </ul>
         </div>
     </nav>
+    <div class="trading-section">
+        <section id="coin-chart" class="coin-chart">
+            <canvas id="coin-graph">
 
-    <div class="page-body">
-        <div class="display-balance">
-            <h2>Account Balance</h2>    
-            <h3>$ <%= currentUser.accountBalance %></h3>
+            </canvas>
+        </section>
+        <div class="trade-area">
+            <input type="text" class="stock-amount" placeholder="$ " id="stock-amount">
+            <button class="stock-btn buy" id="buy-btn">Buy</button>
         </div>
+        <div class="purchase-history">
 
-        <div class="trading-section">
-            <section id="coin-chart" class="coin-chart">
-                <canvas id="coin-graph">
-
-                </canvas>
-            </section>
-            <div class="trade-area">
-                <input type="text" class="stock-amount" placeholder="$ " id="stock-amount">
-                <button class="stock-btn buy" id="buy-btn">Buy</button>
-            </div>
-            <div class="purchase-history">
-
-            </div>
+        </div>
+    </div>
+    <div class="page-body" id="page-body">
+        <div class="display-balance" id="user-balance">
+            <h2>Account Balance</h2>
+            <h3>$ <%= currentUser.accountBalance.toFixed(2) %>
+            </h3>
         </div>
 
         <div class="transaction-side" id="transaction-history">
@@ -66,8 +66,18 @@
                 <span>Coin</span>
                 <span>Amount - $</span>
                 <span class="price-tag">Coin Price</span>
-                <span>  </span>
+                <span> </span>
             </div>
+            <% if(currentUser.tradeTransactions!= null){ %>
+                <% currentUser.tradeTransactions.forEach(transaction=>{ %>
+                <div class="transaction-row" id="<%= transaction.transactionId.toLocaleString()%>">
+                    <span class="purchased-coin-name"><%=transaction.coinName.toUpperCase()%> </span>
+                    <span class="purchased-coin-amount"><%= transaction.purchaseAmount %></span>
+                    <span class="purchased-coin-price"><%= transaction.purchasePrice %></span>
+                    <button class="sell-btn" id="sell-btn">SELL</button>
+                </div>
+                <% }) %>
+            <% } %>
         </div>
 
     </div>

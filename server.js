@@ -14,8 +14,6 @@ app.use(cookies());
 
 //By creating different routes, the file will be more encapsulated.
 const userRoute = require('./public/routes/account');
-const { response } = require('express');
-
 app.use('/', userRoute);
 
 app.get('*', getUserDetails)
@@ -67,10 +65,18 @@ app.post('/search', getUserDetails, authenicateToken, async (req, res) => {
         ]);
         const result = await query.toArray(); //converting to javascript array
         const saleDifferent = (currentPrice - result[0].purchasePrice).toFixed(2)
-        const salePercentage = ((saleDifferent / result[0].purchasePrice*100)/100).toFixed(2);
-        const profitLoss = 
-
-        console.log(saleDifferent, salePercentage)
+        const salePercentage = ((saleDifferent / result[0].purchasePrice*100)/100).toFixed(4);//convert to 4decimal points
+        const profitLoss = parseFloat((result[0].purchaseAmount * salePercentage).toFixed(2))   //convert to 2decimal points
+        newBalance = parseFloat(currentUser.accountBalance + profitLoss + result[0].purchaseAmount) //updating balance 
+        const response = user.collection.updateOne({ "_id": currentUser._id },
+        {
+            $set: { accountBalance: newBalance },
+            $pull: {    //removing element from subdocument
+                tradeTransactions: {
+                    "transactionId": transactionID,
+                }
+            }
+        })
     }
 
 

@@ -139,8 +139,9 @@ h3{
     height: auto;
 }
 .display-balance{
-    margin-top: 1%;
-    margin-left: 2%;
+    position: absolute;
+    margin-top: 2%;
+    margin-left: 1%;
 }
 .row-description{
     display: grid;
