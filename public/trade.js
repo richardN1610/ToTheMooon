@@ -45,7 +45,6 @@ async function Sold(e){
     const coinName = selectedTrade.parentElement.firstElementChild.innerHTML.replace(/ /g,"") //removing the extra space after the coin name
     await GetCoin(coinName); //wait for the fetch to finish before passing the coin price otherwise, the first one will be undefined;
     selectedTrade.parentElement.remove();
-    ReloadDiv();
     const reqType = "sell";
     const result = await fetch('/search', {
         method: "POST",
@@ -55,7 +54,11 @@ async function Sold(e){
         body: JSON.stringify({
             selectedID, reqType, coinPrice
         })
-    })
+    }).then((res) => res.json())
+    if(result.status == "sold"){
+        ReloadDiv();
+    }
+
 }
 
 form.addEventListener('submit', function (e) {
@@ -168,3 +171,20 @@ function UpdateTransactionHistory(transactionID) {
     transactionRow.getElementsByClassName('sell-btn')[0].addEventListener('click', Sold)
 }
 
+const logoutBtn = document.getElementById('log-out')
+logoutBtn.addEventListener('click',async ()=>{
+    const reqType = "logout"
+    const res = await fetch('/search', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+           reqType
+        })
+    }).then((res) => res.json())
+
+    if(res.status == "logged-out"){
+        window.location.href ="/"
+    }
+})

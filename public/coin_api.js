@@ -29,3 +29,20 @@ function DisplayDataTable(result) {
     }
 }
 
+const logoutBtn = document.getElementById('log-out')
+logoutBtn.addEventListener('click',async ()=>{
+    const reqType = "logout"
+    const res = await fetch('/search', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+           reqType
+        })
+    }).then((res) => res.json())
+
+    if(res.status == "logged-out"){
+        window.location.href ="/"
+    }
+})

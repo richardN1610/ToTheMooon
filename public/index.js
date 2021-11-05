@@ -61,3 +61,34 @@ loginBtn.addEventListener('click', ()=>{
     signUpDiv.style.display = "none";
     loginDiv.style.display ="block";
 })
+
+const aboutUsBtn = document.getElementById('about-btn');
+const aboutUsDiv = document.getElementById('about-us-modal')
+const aboutUs = document.getElementById('about-us')
+const closeAboutBtn = document.getElementById('close-about')
+aboutUsBtn.addEventListener('click', ()=>{
+    aboutUsDiv.style.display= "block"
+    fadeIn(aboutUs)
+})
+
+closeAboutBtn.addEventListener('click',()=>{
+    resetOpacity(aboutUsDiv,aboutUs)
+})
+
+function resetOpacity(modal,element){
+    modal.style.display ="none"
+    element.style.opacity = "0"
+  }
+
+function fadeIn(element) {
+    var op = 0.1;  // initial opacity
+    element.style.display = 'block';
+    var timer = setInterval(function () {
+        if (op >= 1){
+            clearInterval(timer);
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op += op * 0.1;
+    }, 20);
+}

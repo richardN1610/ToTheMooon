@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,26 +9,34 @@
     <link rel="stylesheet" href="index.css">
     <title>To The Moon</title>
 </head>
+
 <body>
     <nav class="nav-bar">
         <ul>
             <li id="sign-up">Sign Up</li>
             <li id="login">Login</li>
-            <li>About</li>
-            <li class="home">Home</li>
+            <li class="about-btn" id="about-btn">About</li>
         </ul>
     </nav>
-    <div class="about-us">
-        <div class="close-about">
-            <span>X</span>
-        </div>
-        <div class="about-title">
-            <h1>About Us</h1>
-        </div>
-        <div class="about-body">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum totam eligendi placeat praesentium adipisci quibusdam doloremque eveniet possimus beatae neque recusandae veritatis illo in illum error, minima, voluptatem nostrum odit!
-            Blanditiis optio quisquam quaerat minima, ut doloremque veniam, obcaecati dolore rerum atque exercitationem deserunt inventore debitis molestias nobis placeat qui odit facere quasi ipsam quia dolores? Ea veritatis natus dolorum!
-            In rem vel, laboriosam quaerat dolor officiis est quas, similique accusantium voluptas quod, quasi autem porro consequuntur consectetur ad quidem odio deleniti saepe tempora labore exercitationem consequatur commodi! Qui, quia..</p>
+    <div class="about-us-modal" id="about-us-modal">
+        <div class="about-us" id="about-us">
+            <div class="close-about" id="close-about">
+                <span>&#10006</span>
+            </div>
+            <div class="about-title">
+                <h1>About Us</h1>
+            </div>
+            <div class="about-body">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum totam eligendi placeat praesentium
+                    adipisci quibusdam doloremque eveniet possimus beatae neque recusandae veritatis illo in illum
+                    error, minima, voluptatem nostrum odit!
+                    Blanditiis optio quisquam quaerat minima, ut doloremque veniam, obcaecati dolore rerum atque
+                    exercitationem deserunt inventore debitis molestias nobis placeat qui odit facere quasi ipsam quia
+                    dolores? Ea veritatis natus dolorum!
+                    In rem vel, laboriosam quaerat dolor officiis est quas, similique accusantium voluptas quod, quasi
+                    autem porro consequuntur consectetur ad quidem odio deleniti saepe tempora labore exercitationem
+                    consequatur commodi! Qui, quia..</p>
+            </div>
         </div>
     </div>
     <div class="advert">
@@ -58,16 +67,19 @@
         </div>
         <form action="#" id="signup-form">
             <div class="first-name">
-                <input type="text" class="f-name" id="f-name" placeholder="Full Name" autocomplete="off" required >
+                <input type="text" class="f-name" id="f-name" placeholder="Full Name" autocomplete="off" required>
             </div>
             <div class="signup-password">
-                <input type="password" class="s-password" id="s-password" placeholder="Password"  autocomplete="off" required>
+                <input type="password" class="s-password" id="s-password" placeholder="Password" autocomplete="off"
+                    required>
             </div>
             <div class="mobile">
-                <input type="text" class="mobile-number" id="mobile-number" placeholder="Mobile Number" autocomplete="off" required>
+                <input type="text" class="mobile-number" id="mobile-number" placeholder="Mobile Number"
+                    autocomplete="off" required>
             </div>
             <div class="email">
-                <input type="email" name="email" id="email-address" placeholder="Email Address" autocomplete="off" required>
+                <input type="email" name="email" id="email-address" placeholder="Email Address" autocomplete="off"
+                    required>
             </div>
             <div class="sign-up-btn">
                 <button class="s-btn" type="submit">Sign Up&#8594</button>
@@ -75,4 +87,5 @@
         </form>
     </div>
 </body>
+
 </html>

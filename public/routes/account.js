@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
     if (req.body.reqType == "sign-up") {
-    const password = await bcrypt.hash(req.body.password, 10);
+        const password = await bcrypt.hash(req.body.password, 10);
         try {
             const response = await user.create({    //creating user account in the database
                 fullname: req.body.fullName,
@@ -35,29 +35,35 @@ router.post('/', async (req, res) => {
             throw error
         }
         return res.json({ status: 'ok' })
-    } 
-    
-    if(req.body.reqType == "login") {
+    }
+
+    if (req.body.reqType == "login") {
         const loginID = req.body.loginEmail;
         const loginPW = req.body.loginPassword;
-        const response = await user.findOne({"email" : loginID}).lean();    //finding user by email
+        const response = await user.findOne({ "email": loginID }).lean();    //finding user by email
 
-        if(!response){
-            return res.json({status: 'No ID Found', error:'Invalid Credentials'})
+        if (!response) {
+            return res.json({ status: 'No ID Found', error: 'Invalid Credentials' })
         }
-        if(response){
-            if(await bcrypt.compare(loginPW, response.password)){
+        if (response) {
+            if (await bcrypt.compare(loginPW, response.password)) {
                 const accessToken = jwt.sign({
                     email: response.email
-                },jwtSecret)
+                }, jwtSecret)
                 // return res.json({accessToken: accessToken});
-                res.cookie('accessToken',accessToken,{httpOnly:true, maxAge: 60*60*1000*24})
-                res.json({status:'ok'});
-            }else{
-                return res.json({status: 'error', error:'Invalid Credentials'})
+                res.cookie('accessToken', accessToken, { httpOnly: true, maxAge: 60 * 60 * 1000 * 24 })
+                res.json({ status: 'ok' });
+            } else {
+                return res.json({ status: 'error', error: 'Invalid Credentials' })
             }
         }
     }
+
+    if (req.body.reqType == "logout") {
+        res.cookie('accessToken', ' ', { maxAge: 1 });
+        res.json({status:"logged-out"})
+    }
 })
+
 
 module.exports = router //exporting router so it can be used in server.js

@@ -61,25 +61,29 @@ app.post('/search', getUserDetails, authenicateToken, async (req, res) => {
         const query = user.collection.aggregate([
             { $unwind: "$tradeTransactions" },
             { $match: { "tradeTransactions.transactionId": transactionID } },
-            { $replaceRoot: { newRoot: "$tradeTransactions" }},
+            { $replaceRoot: { newRoot: "$tradeTransactions" } },
         ]);
         const result = await query.toArray(); //converting to javascript array
         const saleDifferent = (currentPrice - result[0].purchasePrice).toFixed(2)
-        const salePercentage = ((saleDifferent / result[0].purchasePrice*100)/100).toFixed(4);//convert to 4decimal points
+        const salePercentage = ((saleDifferent / result[0].purchasePrice * 100) / 100).toFixed(4);//convert to 4decimal points
         const profitLoss = parseFloat((result[0].purchaseAmount * salePercentage).toFixed(2))   //convert to 2decimal points
         newBalance = parseFloat(currentUser.accountBalance + profitLoss + result[0].purchaseAmount) //updating balance 
         const response = user.collection.updateOne({ "_id": currentUser._id },
-        {
-            $set: { accountBalance: newBalance },
-            $pull: {    //removing element from subdocument
-                tradeTransactions: {
-                    "transactionId": transactionID,
+            {
+                $set: { accountBalance: newBalance },
+                $pull: {    //removing element from subdocument
+                    tradeTransactions: {
+                        "transactionId": transactionID,
+                    }
                 }
-            }
-        })
+            })
+        res.json({ status: "sold" })
     }
 
-
+    if (req.body.reqType == "logout") {
+        res.cookie('accessToken', ' ', { maxAge: 1 });
+        res.json({status:"logged-out"})
+    }
 })
 
 app.listen(3000, () => {
